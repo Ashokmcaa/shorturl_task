@@ -29,6 +29,10 @@ http://127.0.0.1:8000/short_urls/create
 
 Database name : shortner_url
 
+AI
+
+I use chatgpt-UI PART
+
 run command
 
 php artisan serve
