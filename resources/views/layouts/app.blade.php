@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Dashboard')</title>
-    <!-- Tailwind CSS CDN (Optional, can replace with Bootstrap) -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -28,7 +27,7 @@
         </div>
     </nav>
 
-    {{-- Main Content --}}
+
     <main class="container mx-auto p-6">
         @yield('content')
     </main>

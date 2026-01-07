@@ -5,36 +5,36 @@
 @section('content')
     <div class="container mx-auto mt-10">
 
-        {{-- Welcome Message --}}
+
         <div class="bg-white shadow-md rounded p-6 mb-6">
             <h1 class="text-2xl font-bold">Welcome, {{ auth()->user()->name }}!</h1>
             <p class="text-gray-600">Role: {{ auth()->user()->role->name ?? 'N/A' }}</p>
             <p class="text-gray-600">Company: {{ auth()->user()->company->name ?? 'N/A' }}</p>
         </div>
 
-        {{-- Dashboard Cards --}}
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            {{-- Total Users --}}
+
             <div class="bg-blue-500 text-white rounded p-6 shadow-md">
                 <h2 class="text-xl font-semibold">Total Users</h2>
                 <p class="text-3xl mt-2">{{ \App\Models\User::count() }}</p>
             </div>
 
-            {{-- Total Companies --}}
+
             <div class="bg-green-500 text-white rounded p-6 shadow-md">
                 <h2 class="text-xl font-semibold">Total Companies</h2>
                 <p class="text-3xl mt-2">{{ \App\Models\Company::count() }}</p>
             </div>
 
-            {{-- Total Roles --}}
+
             <div class="bg-yellow-500 text-white rounded p-6 shadow-md">
                 <h2 class="text-xl font-semibold">Total Roles</h2>
                 <p class="text-3xl mt-2">{{ \App\Models\Role::count() }}</p>
             </div>
         </div>
 
-        {{-- Recent Users Table --}}
+
         <div class="mt-10 bg-white shadow-md rounded p-6">
             <h2 class="text-xl font-semibold mb-4">Recent Users</h2>
             <table class="w-full table-auto border">
