@@ -27,6 +27,8 @@ http://127.0.0.1:8000/short-urls
 
 http://127.0.0.1:8000/short_urls/create
 
+Database name : shortner_url
+
 run command
 
 php artisan serve
