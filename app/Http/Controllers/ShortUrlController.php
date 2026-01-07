@@ -14,31 +14,26 @@ class ShortUrlController extends Controller
         $this->middleware('auth');
     }
 
-    // public function index()
-    // {
-    //     $urls = ShortUrl::with('user')->orderBy('created_at', 'desc')->paginate(10);
 
-    //     return view('short_urls.index', compact('urls'));
-    // }
 
     public function index()
     {
         $user = auth()->user();
         $role = $user->role->name;
 
-        // ❌ SuperAdmin cannot see any URLs
+        //  SuperAdmin cannot see any URLs
         if ($role === 'SuperAdmin') {
             abort(403, 'SuperAdmin cannot view short URLs');
         }
 
-        // ✅ Admin: URLs NOT created in own company
+        // Admin: URLs NOT created in own company
         if ($role === 'Admin') {
             $urls = ShortUrl::whereHas('user', function ($q) use ($user) {
                 $q->where('company_id', '!=', $user->company_id);
             })->with('user.company')->get();
         }
 
-        // ✅ Member: URLs NOT created by themselves
+        // Member: URLs NOT created by themselves
         if ($role === 'Member') {
             $urls = ShortUrl::where('user_id', '!=', $user->id)
                 ->with('user.company')

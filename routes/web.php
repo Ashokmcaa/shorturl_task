@@ -27,11 +27,14 @@ Route::middleware(['auth'])->group(function () {
         ->name('logout');
 
 
-    Route::get('/short-urls', [ShortUrlController::class, 'index'])
-        ->name('short-urls.index');
+    // Route::get('/short-urls', [ShortUrlController::class, 'index'])
+    //     ->name('short-urls.index');
 
-    Route::post('/short-urls', [ShortUrlController::class, 'create'])
-        ->name('short-urls.create');
+    Route::get('/short-urls', [ShortUrlController::class, 'index']);
+    Route::get('/s/{code}', [ShortUrlController::class, 'redirect']);
+
+    // Route::post('/short-urls', [ShortUrlController::class, 'create'])
+    //     ->name('short-urls.create');
 
     Route::get('/users', [UserController::class, 'index'])
         ->name('users.index');

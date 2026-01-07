@@ -9,10 +9,12 @@ password:password
 Admin
 
 ashok@example.com
+password:password
 
 Member
 
-anand@example.com
+suryamember@example.com
+password:password
 
 Seeder run
 php artisan db:seed --class=SuperAdminSeeder
@@ -32,6 +34,9 @@ Database name : shortner_url
 AI
 
 I use chatgpt-UI PART
+
+s/{code} short url code
+http://127.0.0.1:8000/s/76Mjuf
 
 run command
 
